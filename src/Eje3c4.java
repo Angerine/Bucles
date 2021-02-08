@@ -8,10 +8,9 @@ import java.util.*;
 public class Eje3c4 {
 
 	public static void main(String[] args) {
-		int contador = 2;
-		int cuenta = 1;
+		
 		boolean perfect = true;
-		int numMasUno = 1;
+		
 		int num = 0;
 		int suma = 0;
 		Scanner respuesta = new Scanner(System.in);
