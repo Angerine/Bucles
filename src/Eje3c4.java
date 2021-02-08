@@ -6,69 +6,56 @@ Un número perfecto es un entero positivo que es igual a la suma de todos los ent
 import java.util.*;
 
 public class Eje3c4 {
+	static boolean perfect = true;
+	
+	static int num = 0;
+	static int suma = 0;
+	static Scanner respuesta = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		
-		boolean perfect = true;
+		int numero=preguntaNumero();
+		int perfecto=esPerfecto(numero);
 		
-		int num = 0;
-		int suma = 0;
-		Scanner respuesta = new Scanner(System.in);
-do {
-	
-		System.out.println("Introduce número");
-		num = respuesta.nextInt();
-	
-		if(num<1) {
-			System.out.println("Tiene que ser mayor de 0");}
-		}
-while(num<1);
-num=num+1;
+		System.out.println(num);
 
-		do {
-		suma=0;
-			for (int i = 1; i < num; i++) {
-				if (num % i == 0) {
-					suma = suma + i;
-				}
-			}
-			if (suma == num) {
-				perfect = true;
-				System.out.println(num);
-			} else {
-				num++;
-				perfect = false;
-			
-			}
-
-		} while (perfect == false);
 	}
-}
-/*
- * int numero= pedirNumero(); int perfect=perfecto(numero);
- * System.out.println(perfect);
- * 
- * 
- * 
- * 
- * 
- * } public static int perfecto(int recibido) {
- * 
- * do { recibido=recibido+1; perfect= esPerfecto(recibido);}
- * 
- * while(perfect==false); return recibido;
- * 
- * 
- * }
- * 
- * 
- * public static int pedirNumero() {
- * 
- * do { System.out.println("Introduce número"); num=respuesta.nextInt();
- * if(num<1) { System.out.println("Tiene que mayor a 0"); }} while(num<1);
- * return num;
- * 
- * } public static boolean esPerfecto(int num) { boolean perfecto=false; for(int
- * i=1;i<num;i++) { if(num%i==0) { suma=suma+contador; }} if(suma==num) {
- * perfecto=true; } return perfecto;
- */
+		
+	
+	public static int preguntaNumero() {
+		
+		do {
+			
+			System.out.println("Introduce número");
+			num = respuesta.nextInt();
+		
+			if(num<1) {
+				System.out.println("Tiene que ser mayor de 0");}
+			}
+	while(num<1);
+	num=num+1;
+	return num;
+	}
+	public static int esPerfecto(int numero) {
+		do {
+			suma=0;
+				for (int i = 1; i < num; i++) {
+					if (num % i == 0) {
+						suma = suma + i;
+					}
+				}
+				if (suma == num) {
+					perfect = true;
+				
+				} else {
+					num++;
+					perfect = false;
+				
+				}
+
+			} while (perfect == false);
+		return num;
+		}
+		
+	}
+
